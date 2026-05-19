@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
-        /* Floating Button Trigger */
-        .wa-chat-btn {
+        /* Floating WhatsApp Icon Button */
+        .wa-icon-btn {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: 90px; /* Shifted left to prevent overlapping your GetVocal widget */
             background-color: #25D366;
             color: white;
             width: 60px;
@@ -22,105 +22,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 32px;
             box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.2s ease;
-        }
-        .wa-chat-btn:hover {
-            transform: scale(1.08);
-        }
-
-        /* Embedded Chat Window Container */
-        .wa-chat-box {
-            display: none; /* Hidden by default */
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 350px;
-            max-width: 90%;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-            overflow: hidden;
-            z-index: 9999;
-        }
-
-        /* Chat Header */
-        .wa-chat-header {
-            background-color: #075E54;
-            color: white;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .wa-chat-avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #075E54;
-            font-size: 20px;
-        }
-        .wa-chat-status h4 {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .wa-chat-status p {
-            margin: 0;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        /* Chat Body (Simulated Messages) */
-        .wa-chat-body {
-            background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Official WhatsApp BG */
-            background-color: #e5ddd5;
-            padding: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        .wa-msg {
-            background-color: white;
-            padding: 10px 14px;
-            border-radius: 0px 10px 10px 10px;
-            font-size: 14px;
-            color: #333;
-            max-width: 85%;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-        }
-
-        /* Chat Footer/Action Button */
-        .wa-chat-footer {
-            padding: 12px;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-        }
-        .wa-send-btn {
-            background-color: #25D366;
-            color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            justify-content: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 9999;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
-        .wa-send-btn:hover {
+        .wa-icon-btn:hover {
             background-color: #128C7E;
+            color: white;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -139,45 +50,13 @@
         embedKey: 'emb_F7qaUxgXUJTxzy40SDFEA8cifO5NUD4x',
       });
     </script>
-    <div class="wa-chat-btn" onclick="toggleWhatsAppChat()">
+    <a href="https://wa.me/19127334839" 
+       class="wa-icon-btn" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
-    </div>
-
-    <div class="wa-chat-box" id="whatsappChatBox">
-        <div class="wa-chat-header">
-            <div class="wa-chat-avatar">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <div class="wa-chat-status">
-                <h4>Sivarojn Engineering</h4>
-                <p>Typically replies in minutes</p>
-            </div>
-        </div>
-        <div class="wa-chat-body">
-            <div class="wa-msg">
-                Hi there! Welcome to Sivarojn Engineering. How can we help you today?
-            </div>
-        </div>
-        <div class="wa-chat-footer">
-            <a href="https://wa.me/15550123?text=Hello%20Sivarojn%20Engineering,%20I'm%20interested%20in..." 
-               class="wa-send-btn" 
-               target="_blank" 
-               rel="noopener noreferrer">
-                <i class="fas fa-paper-plane"></i> Start Chat on WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function toggleWhatsAppChat() {
-            var chatBox = document.getElementById("whatsappChatBox");
-            if (chatBox.style.display === "block") {
-                chatBox.style.display = "none";
-            } else {
-                chatBox.style.display = "block";
-            }
-        }
-    </script>
+    </a>
 
 </body>
 </html>
